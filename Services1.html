@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content-wrapper {
+            position: relative;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .visit-button {
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+        h1{
+            color: white;
+        font-size: xx-large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: underline;
+        }
+        h2{
+            color:white;
+            font-size: x-large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .visit-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="Video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="navbar">
+                <a href="Mywebsite.html">Back</a>
+                <a href="Home.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="#">Services</a>
+                <a href="RegisterationPage.html">Register</a>
+                <a href="LoginPage.html">Login</a>
+                <a href="Contactus.html">Contact</a>
+            </div>
+            <br><br><br>
+            <h1>Available AirLines Services</h1>
+            <br><br><br><br><br>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="airindia.jpg" alt="Image 1">
+                    <h2>Air India</h2>
+                    <a href="airindiaprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="airindiaexpress.jpg" alt="Image 2">
+                    <h2>Air India Express</h2>
+                    <a href="airindiaexpressprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="flybig.jpg" alt="Image 3">
+                    <h2>Fly Big</h2>
+                    <a href="flybigprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="indigo.jpg" alt="Image 4">
+                    <h2>Indigo</h2>
+                    <a href="indigoprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="airasia.jpg" alt="Image 5">
+                    <h2>Air Asia</h2>
+                    <a href="airasia.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="qutar.jpg" alt="Image 6">
+                    <h2>Qutar</h2>
+                    <a href="qutarprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="vistara.jpg" alt="Image 7">
+                    <h2>Vistara</h2>
+                    <a href="vistara.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="emirates.jpg" alt="Image 8">
+                    <h2>Emirates</h2>
+                    <a href="emiratesprice.html" class="visit-button">Visit</a>
+                </div>
+                <div class="grid-item">
+                    <img src="spicejet.jpg" alt="Image 9">
+                    <h2>SpiceJet</h2>
+                    <a href="spicejet.html" class="visit-button">Visit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>UI Pages</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+        background-image: url("loginstudentandadmin1.jpg");
+    }
+     h1{
+                text-align: center;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:xx-large;
+                color: black;
+                text-decoration: underline;
+             }
+    h2{
+        text-align: center;
+        color: black;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:large;
+    }
+    h3{
+        text-align: center;
+    }
+    nav {
+        color: white;
+        padding: 30px;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        text-decoration:underline;
+    }
+    form-control{
+        margin-left: 50%;
+    }
+
+</style>
+<script>
+    // User Validations
+function loginValidation() {
+        // Ramesh
+var uname = document.myform.username.value;
+         //Ramesh@123
+var password = document.myform.password.value;
+        if(uname==null || uname=="") {
+          alert("Name cant be blank")
+          return false;  
+       } else if (password.length<6){
+          alert("Password Must be 6 letters")
+          return false;
+       }  
+       return true                 
+    }           
+ </script>
+</head>
+<body>
+    <nav>
+        <a href="Mywebsite.html">
+            <button>Home</button>
+          </a>
+          <a href="LoginPage.html">
+            <button>Back</button>
+          </a>
+    </nav>
+    <br><br><br><br><br><br><br>
+<h1>Login Form</h1>
+<form name="myform" action="payment.html" onsubmit="return loginValidation(this)">
+<h2>
+    <h3>
+        <center>
+<div class="input-group">
+    <div  class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input  id="email" type="text" class="form-control" name="username" placeholder="Email"><br>
+</div>
+</div>
+<br>
+<div class="input-group">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="password" type="password" class="form-control" name="password" placeholder="Password"><br>
+</div>
+</div>
+</center>
+<div class="checkbox">
+    <label><input type="checkbox" name="remember"> Remember me</label>
+</div>
+<br>
+<input type="submit" value="Submit"><br>
+<br>
+</h3>
+</h2>
+</form>
+</body>
+</html>

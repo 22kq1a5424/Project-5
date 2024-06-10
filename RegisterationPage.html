@@ -1,0 +1,252 @@
+<html>
+<head>
+<title>UI Pages</title>
+<script>
+function Validation() {
+   var fname = document.myform.data_2.value;
+   var lname= document.myform.data_3.value;
+   var address= document.myform.data_4.value;
+             if(fname==null || fname=="") {
+               alert(" First Name is required")
+               return false;  
+            } else if (lname==null || lname==""){
+               alert("Last Name is required")
+               return false;
+            }    
+            else if (address==null || address==""){
+               alert("Address is required")
+               return false;
+            }    
+            var mobileNumber = document.getElementById("mobileNumber").value;
+    
+    // Check if mobile number field is empty
+    if (mobileNumber.trim() === "") {
+        alert("Please enter your mobile number");
+        return false;
+    }
+    
+    // Check if mobile number contains exactly 10 digits
+    if (mobileNumber.length !== 10 || isNaN(mobileNumber)) {
+        alert("Please enter a valid 10-digit mobile number");
+        return false;
+    }
+    
+            var email = document.getElementById("email").value;
+    
+    // Check if email field is empty
+    if (email.trim() === "") {
+        alert("Please enter your email address");
+        return false;
+    }
+    
+    var atIndex = email.indexOf("@");
+    var dotIndex = email.lastIndexOf(".");
+    
+    if (atIndex < 1 || dotIndex < atIndex + 2 || dotIndex + 2 >= email.length) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+      const checkboxes = document.getElementsByName('interest');
+      let checkedCount = 0;
+
+      // Count how many checkboxes are checked
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          checkedCount++;
+        }
+      }
+
+      if (checkedCount === 0) {
+        alert("Please accept the terms and conditions.");
+        return false;
+      }
+      const radioButtons = document.getElementsByName('type');
+      let checkedButton = false;
+
+      for (let i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+          checkedButton = true;
+          break;
+        }
+      }
+      if (!checkedButton) {
+        alert("Please select a Economy Name.");
+        return false;
+      }
+      const radioButtons2 = document.getElementsByName('category');
+      let checkedButton2 = false;
+
+      for (let i = 0; i < radioButtons2.length; i++) {
+        if (radioButtons2[i].checked) {
+          checkedButton2 = true;
+          break;
+        }
+      }
+      if (!checkedButton2) {
+        alert("Please select the Category of food");
+        return false;
+      }
+      const originDropdown = document.getElementById('origin');
+      const selectedorigin = originDropdown.value;
+
+      // Check if a country is selected (not the default value)
+      if (selectedorigin === "") {
+        alert("Please select the origin.");
+        return false;
+      }
+      const originDropdown1 = document.getElementById('destination');
+      const selectedorigin1 = originDropdown1.value;
+
+      // Check if a country is selected (not the default value)
+      if (selectedorigin1 === "") {
+        alert("Please select the destination");
+        return false;
+      }
+      
+      const dobInput = document.getElementById('journey');
+      const dob = new Date(dobInput.value);
+      const currentDate = new Date();
+
+      // Check if the date is valid and in the past
+      if (isNaN(dob) || dob < currentDate) {
+        alert("Please choose correct the date of journey.");
+        return false;
+      }
+      const countryDropdown1 = document.getElementById('traveller');
+      const selectedCountry1 = countryDropdown1.value;
+
+      // Check if a country is selected (not the default value)
+      if (selectedCountry1 <=0) {
+        alert("Please enter the number of travellers");
+        return false;
+      }
+      return true;
+    }
+</script>
+<style>
+    body{
+        background-image: url("registerimage.jpg");
+    }
+    h1{
+                color: rgb(250,250,250);
+                text-shadow: 5px 5px 10px white;
+                text-decoration: underline;
+             }
+             .jaya{
+                 color:white;
+                 
+            }
+    h2{
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(250,250,250)
+                font-size: large;
+    }
+    
+</style>
+</head>
+<body>
+  <div class="container">
+<form name="myform" action="LoginPage.html" onsubmit="return Validation(this)">
+<h1>Registeration Page</h1>
+<h2 class="jaya">
+First Name:<span style="color: red;">*</span>
+<input type="text" id="data_2" name="data_2" autofocus>
+<br>
+<br>
+Last Name:<span style="color: red;">*</span>
+<input type="text" id="data_3" name="data_3"><br>
+<br>
+
+Type of Ticket:<span style="color: red;">*</span>
+<br>
+<label>
+    <input type="radio" name="type" value="b"> Bussiness Class
+  </label><br>
+  <label>
+    <input type="radio" name="type" value="o"> Premium Class
+  </label><br>
+<br>
+<label for="dob">Date of Journey:<span style="color: red;"> *</span></label>
+    <input type="date" id="dob" name="journey" required><br>
+<br>  <label for="email">Email:<span style="color: red;"> *</span></label>
+<input type="email" id="email" name="email">
+<datalist id="email">
+    <option value="jaya@gmail.com"></option>
+                 <option value="pathijaya@yahoo.com"></option>
+                 <option value="jayalakshmipathi24@hotmail.com"></option>
+                 <option value="pjlakshmi123@gmail.com"></option>
+                      
+            </datalist>
+<br>
+<br>
+Address:<span style="color: red;"> *</span>
+<textarea  id="data_4" name="data_4" cols="30" row="40">
+</textarea>
+<br>
+<br>
+<label for="mobileNumber">Mobile Number:<span style="color: red;"> *</span></label>
+<input type="tel" id="mobileNumber" name="mobileNumber" maxlength="10">
+
+<br>
+<br>
+<label >Origin:<span style="color: red;">*</span></label>
+<select id="or" name="origin" required>
+<option value="">Select</option>
+<option value="MUMBAI">MUMBAI</option>
+<option value="BANGOLORE">BANGOLORE</option>
+<option value="CHENNAI">CHENNAI</option>
+<option value="DELHI">DELHI</option>
+<option value="VIJAYAWADA">VIJAYAWADA</option>
+<option value="VISAKAPATNAM">VISAKAPATNAM</option>
+<option value="hyd">HYDERABAD</option>
+<option value="CO">COCHIN</option>
+<option value="GOA">GOA</option>
+<option value="PUNE">PUNE</option>
+</select>
+<br>
+<br>
+<label >Destination:<span style="color: red">*</span></label>
+<select id="de" name="destination" required>
+<option value="">Select</option>
+<option value="MUMBAI">MUMBAI</option>
+<option value="BANGOLORE">BANGOLORE</option>
+<option value="CHENNAI">CHENNAI</option>
+<option value="DELHI">DELHI</option>
+<option value="VIJAYAWADA">VIJAYAWADA</option>
+<option value="VISAKAPATNAM">VISAKAPATNAM</option>
+<option value="hyd">HYDERABAD</option>
+<option value="CO">COCHIN</option>
+<option value="GOA">GOA</option>
+<option value="PUNE">PUNE</option>
+</select>
+<br>
+<br>
+Number of Tickets:<span style="color: red"> *</span>
+<input type="number" name="adu" id="traveller" min="1" max ="100" step="1"  value="1"> <br>
+<br>
+Traveller:<span style="color: red;">*</span><br>
+Adult(15+):
+<input type="number" name="adu"  id="traveller" min="1" max ="100" step="1"  value="1"> <br>
+Child(5-16):
+<input type="number" name="ch" min="0" max ="50" step="1"  value="0"> <br>
+Infants(1-4):
+<input type="number" name="in" min="0" max ="50" step="1"  value="0"> <br>
+<br>
+Select your Food Category:<span style="color: red;"> *</span>
+<br>
+<label>
+    <input type="radio" name="category" value="v"> Veg Food
+  </label><br>
+  <label>
+    <input type="radio" name="category" value="nv"> Non-Veg Food
+  </label><br>
+  <br>
+  <input type="Checkbox" name="interest" value="R">I agree the terms and conditions<br>
+</h2>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>

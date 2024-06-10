@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI Pages</title>
+    <style>
+        body {
+            background-image: url("registerimage.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color:rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: rgb(250, 250, 250);
+            text-shadow: 5px 5px 10px white;
+        }
+
+        .jaya {
+            color: white;
+        }
+
+        h2 {
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(250, 250, 250);
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form name="myform" action="LoginPage.html" onsubmit="return Validation(this)">
+        <h1>Registration Page</h1>
+        <h2 class="jaya">
+            First Name:<span style="color: red;"> *</span><br/>
+            <input type="text" id="data_2" name="data_2" autofocus><br>
+            <br>
+            Last Name:<span style="color: red;"> *</span><br/>
+            <input type="text" id="data_3" name="data_3"><br>
+            <br>
+            Type of Ticket:<span style="color: red;"> *</span><br/>
+            <br>
+            <label>
+                <input type="radio" name="type" value="b"> Business Class
+            </label><br>
+            <label>
+                <input type="radio" name="type" value="o"> Premium Class
+            </label><br>
+            <br>
+            <label for="dob">Date of Journey:<span style="color: red;"> *</span><br/></label>
+            <input type="date" id="dob" name="journey" required><br>
+            <br>
+            <label for="email">Email:<span style="color: red;"> *</span><br/></label>
+            <input type="email" id="email" name="email">
+            <datalist id="email">
+                <option value="jaya@gmail.com"></option>
+                <option value="pathijaya@yahoo.com"></option>
+                <option value="jayalakshmipathi24@hotmail.com"></option>
+                <option value="pjlakshmi123@gmail.com"></option>
+            </datalist>
+            <br>
+            Address:<span style="color: red;"> *</span><br/>
+            <textarea id="data_4" name="data_4" cols="30" row="40"></textarea>
+            <br>
+            <br>
+            <label for="mobileNumber">Mobile Number:<span style="color: red;"> *</span><br/></label>
+            <input type="tel" id="mobileNumber" name="mobileNumber" maxlength="10">
+            <br>
+            <br>
+            <label>Origin:<span style="color: red;"> *</span><br/></label>
+            <br>
+            <select id="or" name="origin" required>
+                <option value="">Select</option>
+                <option value="MUMBAI">MUMBAI</option>
+                <option value="BANGALORE">BANGALORE</option>
+                <option value="CHENNAI">CHENNAI</option>
+                <option value="DELHI">DELHI</option>
+                <option value="VIJAYAWADA">VIJAYAWADA</option>
+                <option value="VISAKHAPATNAM">VISAKHAPATNAM</option>
+            </select>
+            <br>
+            <br>
+            <label>Destination:<span style="color: red"> *</span><br/></label>
+            <br>
+            <select id="de" name="destination" required>
+                <option value="">Select</option>
+                <option value="MUMBAI">MUMBAI</option>
+                <option value="BANGALORE">BANGALORE</option>
+                <option value="CHENNAI">CHENNAI</option>
+                <option value="DELHI">DELHI</option>
+                <option value="VIJAYAWADA">VIJAYAWADA</option>
+                <option value="VISAKHAPATNAM">VISAKHAPATNAM</option>
+            </select>
+            <br>
+            <br>
+            Number of Tickets:<span style="color: red"> *</span><br/>
+            <br>
+            <label>
+                <input type="radio" name="number" value="o"> 1
+            </label><br>
+            <label>
+                <input type="radio" name="number" value="tw"> 2
+            </label><br>
+            <label>
+                <input type="radio" name="number" value="th"> 3
+            </label><br>
+            <label>
+                <input type="radio" name="number" value="fo"> 4
+            </label><br>
+            <label>
+                <input type="radio" name="number" value="m"> More than 4
+            </label><br>
+            <br>
+            <label>Traveller:<span style="color: red;"> *</span><br/></label>
+            <br>
+            <select id="tr" name="traveller" required>
+                <option value="">Select</option>
+                <option value="A">Adult(15+)</option>
+                <option value="c">Child(3-17)</option>
+                <option value="I">Infant(0-2)</option>
+            </select>
+            <br>
+            <br>
+            Select your Food Category:<span style="color: red;"> *</span><br/>
+            <br>
+            <label>
+                <input type="radio" name="category" value="v"> Veg Food
+            </label><br>
+            <label>
+                <input type="radio" name="category" value="nv"> Non-Veg Food
+            </label><br>
+            <br>
+            What are the Items you needed?<span style="color: red;"> *</span><br/>
+            <br>
+            <label>
+                <input type="checkbox" name="interest" value="rice"> Dosa
+            </label><br>
+            <label>
+                <input type="checkbox" name="interest" value="dal"> Prawns Biryani
+            </label><br>
+            <label>
+                <input type="checkbox" name="interest" value="fries"> Fries
+            </label><br>
+            <label>
+                <input type="checkbox" name="interest" value="Chicken"> Veg Rice
+            </label><br>
+            <label>
+                <input type="checkbox" name="interest" value="Biryani"> Biryani
+            </label><br>
+            <br>
+            <input type="submit" value="Submit">
+        </h2>
+    </form>
+</div>
+</body>
+</html>

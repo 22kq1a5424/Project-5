@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultMessage {
+    margin-top: 20px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultMessage {
+    margin-top: 20px;
+    font-weight: bold;
+}
+nav {
+        color: white;
+        padding: 30px;
+        top=0;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        text-decoration:underline;
+    }
+</style>
+</head>
+<body>
+    </nav>
+    <div class="container">
+        <h2>Payment Form</h2>
+        <form id="paymentForm" action="Contactus.html" >
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="upi">UPI ID</option>
+                </select>
+            </div>
+            <div id="cardPayment" class="payment-method">
+                <div class="form-group">
+                    <label for="cardName">Name on Card:</label>
+                    <input type="text" id="cardName" name="cardName">
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                </div>
+                <div class="form-group">
+                    <label for="expDate">Expiration Date:</label>
+                    <input type="month" id="expDate" name="expDate">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv">
+                </div>
+            </div>
+            <div id="upiPayment" class="payment-method" style="display: none;">
+                <div class="form-group">
+                    <label for="upiId">UPI ID:</label>
+                    <input type="text" id="upiId" name="upiId">
+                </div>
+            </div>
+            <button type="submit">Submit Payment</button>
+        </form>
+        <p id="resultMessage"></p>
+    </div>
+    <script>
+        document.getElementById('paymentMethod').addEventListener('change', function(event) {
+    var paymentMethod = event.target.value;
+    var cardPayment = document.getElementById('cardPayment');
+    var upiPayment = document.getElementById('upiPayment');
+    
+    if (paymentMethod === 'card') {
+        cardPayment.style.display = 'block';
+        upiPayment.style.display = 'none';
+    } else {
+        cardPayment.style.display = 'none';
+        upiPayment.style.display = 'block';
+    }
+});
+
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    window.location.href = 'Contactus.html';
+    var paymentMethod = document.getElementById('paymentMethod').value;
+    var resultMessage = document.getElementById('resultMessage');
+
+    if (paymentMethod === 'card') {
+        var cardName = document.getElementById('cardName').value;
+        var cardNumber = document.getElementById('cardNumber').value;
+        var expDate = document.getElementById('expDate').value;
+        var cvv = document.getElementById('cvv').value;
+
+        if (!cardName || !cardNumber || !expDate || !cvv) {
+            resultMessage.textContent = 'Please fill in all card details.';
+            resultMessage.style.color = 'red';
+            return;
+        }
+
+        resultMessage.textContent = 'Card payment successful!';
+        resultMessage.style.color = 'green';
+    } else if (paymentMethod === 'upi') {
+        var upiId = document.getElementById('upiId').value;
+
+        if (!upiId) {
+            resultMessage.textContent = 'Please enter your UPI ID.';
+            resultMessage.style.color = 'red';
+            return;
+        }
+
+        resultMessage.textContent = 'UPI payment successful!';
+        resultMessage.style.color = 'green';
+    }
+});
+    </script>
+</body>
+</html>

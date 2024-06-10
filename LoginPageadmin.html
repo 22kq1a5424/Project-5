@@ -1,0 +1,85 @@
+
+<html>
+<head>
+<title>UI Pages</title>
+<style>
+    body{
+        background-image: url("loginstudentandadmin1.jpg");
+    }
+     h1{
+                text-align: center;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:xx-large;
+                color: black;
+                text-decoration: underline;
+             }
+    h2{
+        text-align: center;
+        color:black;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:large;
+    }
+    nav {
+        color: white;
+        padding: 30px;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        text-decoration:underline;
+    }
+
+          
+</style>
+<script>
+    // User Validations
+function loginValidation() {
+        // Ramesh
+var uname = document.myform.username.value;
+         //Ramesh@123
+var password = document.myform.password.value;
+        if(uname==null || uname=="") {
+          alert("Name cant be blank")
+          return false;  
+       } else if (password.length<6){
+          alert("Password Must be 6 letters")
+          return false;
+       }  
+       return true                 
+    }           
+ </script>
+</head>
+<body>
+    <nav>
+        <a href="Mywebsite.html">
+            <button>Home</button>
+          </a>
+          <a href="LoginPage.html">
+            <button>Back</button>
+          </a>
+    </nav>
+    <br><br><br><br><br><br><br>
+<h1>Login Form</h1>
+<form name="myform" action="payment.html" onsubmit="return loginValidation(this)">
+<h2>
+Company Admin:<input type="text" name="username" placeholder="Username.."> <br>
+<br>
+Password:<input type="password" name="password" placeholder="Password.."> <br>
+<br>
+<input type="submit" value="Submit"><br>
+<br>
+</h2>
+</form>
+</body>
+</html>

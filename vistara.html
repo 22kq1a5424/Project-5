@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vistara Express Popular Domestic Routes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .route-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .route-card:hover {
+            background-color: #e0f7fa;
+        }
+        .route-card h3, .route-card p, .route-card span {
+            margin: 5px 0;
+        }
+        .route-card span {
+            font-size: 1.2em;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vistara Popular Domestic Routes</h1>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Cochin (COK) to Bangalore (BLR)</p>
+        <span>₹ 3,459</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Bangalore (BLR) to Pune (PNQ)</p>
+        <span>₹ 5,791</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Bangalore (BLR) to Hyderabad (HYD)</p>
+        <span>₹ 3,125</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Hyderabad (HYD) to Bangalore (BLR)</p>
+        <span>₹ 3,897</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Goa (GOI) to Delhi (DEL)</p>
+        <span>₹ 4,549</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Bangalore (BLR) to Visakhapatnam (VTZ)</p>
+        <span>₹ 3,786</span>
+    </div>
+    <div class="route-card" onclick="goToPayment()">
+        <h3>Vistara</h3>
+        <p>Delhi (DEL) to Kolkata (CCU)</p>
+        <span>₹ 4,786</span>
+    </div>
+</div>
+
+<script>
+    function goToPayment() {
+        window.location.href = 'payment.html';
+    }
+</script>
+
+</body>
+</html>
